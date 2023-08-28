@@ -4,6 +4,22 @@ import os
 import shutil
 import win32com.client
 
+def create_folder_if_not_exists(folder_name):
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    folder_path = os.path.join(script_directory, folder_name)
+
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print(f"Folder '{folder_name}' created at: {folder_path}")
+    else:
+        print(f"Folder '{folder_name}' already exists at: {folder_path}")
+
+# Specify the name of the folder you want to create
+desired_folder_name = "PS_Scripts"
+
+# Call the function to create the folder if it doesn't exist
+create_folder_if_not_exists(desired_folder_name)
+
 def browse_folder():
     folder_path = filedialog.askdirectory()
     if folder_path:
@@ -21,7 +37,7 @@ Start-Process "{folder_path}"
 code -n .
 Start-Process powershell.exe
 """
-        ps_script_path = f".\\{file_name}.ps1"
+        ps_script_path = f".\PS_Scripts\{file_name}.ps1"
         with open(ps_script_path, "w") as ps_script_file:
             ps_script_file.write(ps_script_content)
 
