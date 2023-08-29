@@ -61,7 +61,7 @@ Start-Process powershell.exe
 
 # Create the main window
 root = tk.Tk()
-root.title("Folder Path Input Example")
+root.title("WorkHelper v0.0")
 
 # Create labels for input fields
 label_folder_path = tk.Label(root, text="Folder Path:")
