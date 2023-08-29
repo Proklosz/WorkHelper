@@ -32,10 +32,10 @@ def process_folder():
 
     if folder_path and file_name:
         # Creating the PowerShell script
-        ps_script_content = f"""Set-Location "{folder_path}" 
-Start-Process "{folder_path}" 
-code -n .
-Start-Process powershell.exe
+        ps_script_content = f"""Set-Location "{folder_path}"  
+Start-Process powershell.exe 
+Start-Process explorer.exe . -Wait
+code -n . 
 Exit
 """
         ps_script_path = f".\PS_Scripts\{file_name}.ps1"
@@ -62,7 +62,7 @@ Exit
 
 # Create the main window
 root = tk.Tk()
-root.title("WorkHelper v0.0")
+root.title("Folder Path Input Example")
 
 # Create labels for input fields
 label_folder_path = tk.Label(root, text="Folder Path:")
