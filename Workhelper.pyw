@@ -32,10 +32,10 @@ def process_folder():
 
     if folder_path and file_name:
         # Creating the PowerShell script
-        ps_script_content = f"""Set-Location "{folder_path}"  
-Start-Process powershell.exe 
+        ps_script_content = f"""Set-Location "{folder_path}"
+Start-Process powershell.exe
 Start-Process explorer.exe . -Wait
-code -n . 
+code -n .
 Exit
 """
         ps_script_path = f".\PS_Scripts\{file_name}.ps1"
