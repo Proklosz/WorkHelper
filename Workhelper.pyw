@@ -36,6 +36,7 @@ def process_folder():
 Start-Process "{folder_path}" 
 code -n .
 Start-Process powershell.exe
+Exit
 """
         ps_script_path = f".\PS_Scripts\{file_name}.ps1"
         with open(ps_script_path, "w") as ps_script_file:
